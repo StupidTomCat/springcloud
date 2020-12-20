@@ -1,0 +1,8 @@
+server:
+  port: 8002
+#eureka配置
+eureka:
+  client:
+    register-with-eureka: false #因为这是消费方，所以不向注册中心注册自己
+    service-url: #随机选择一个注册中心去访问
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
