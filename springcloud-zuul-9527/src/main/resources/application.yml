@@ -1,2 +1,28 @@
 server:
-  port: 9001
+  port: 9527
+
+# 应用名（spring配置）
+spring:
+  application:
+    name: springcloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zuul9527.com
+    prefer-ip-address: true #左下角显示ip地址
+
+#注册中心页面info配置
+info:
+  app.name: yyh-springcloud
+  company.name: blog.yyh.com
+
+#配置zuul
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept #注册中心Application列下面的id  这里小写是因为地址栏只接受小写  左边的键名字任意，因为上面routes点进去是map类型
+    mydept.path: /mydept/** #给上面的微服务名起别名
+  ignored-services: "*" #隐藏全部的微服务名（通配符）  springcloud-provider-dept：不再使用上方的原来的微服务名去访问了
+  prefix: /yyh #公共的访问前缀

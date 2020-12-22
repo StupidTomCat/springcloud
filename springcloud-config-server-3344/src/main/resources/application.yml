@@ -1,29 +1,12 @@
 server:
-  port: 8003
-#mybatis配置
-mybatis:
-  type-aliases-package: classpath:com.yyh.springcloud.pojo
-  config-location: classpath:mybatis/mybatis-config.xml
-#spring的配置
+  port: 3344
 spring:
   application:
-    name: springcloud-provider-dept
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource #数据源
-    driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost:3306/springcloud02?useUnicode=true&characterEncoding=utf8
-    username: root
-    password: 883203
-
-#eureka的配置  向eureka注册中心注册
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-  instance:
-    instance-id: springcloud-provider-dept-8003 #修改注册中心页面Status位置的描述信息
-
-#注册中心页面info配置
-info:
-  app.name: yyh-springcloud
-  company.name: blog.yyh.com
+    name: springcloud-config-server
+    #连接远程仓库
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/StupidTomCat/springcloud-config.git #通过本config-server去用git获取仓库中的yml配置
+          #http://localhost:3344/application/test/master或者http://localhost:3344/application-test.yml去访问仓库的yml文件

@@ -23,7 +23,7 @@ eureka:
   instance:
     instance-id: springcloud-provider-dept-hystrix-8001 #修改注册中心页面Status位置的描述信息
     prefer-ip-address: true #当鼠标指在服务上面时，在左下角的提示：desktop2lsd5ka:8001->ip地址
-#注册中心页面info配置
+#注册中心页面info配置  好像是返回一个json字符串到空白页面
 info:
   app.name: yyh-springcloud
   company.name: blog.yyh.com
