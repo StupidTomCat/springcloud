@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: config-dept #需要从github上面读取的资源名称，不需要后缀
+      profile: dev
+      label: master #指的是分支
+      uri: http://localhost:3344 #在程序启动的时候连接，中途在github什么修改配置文件只能在3344看到变化，在访问8001时还是springcloud01数据库

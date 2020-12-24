@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: config-eureka #需要从github上面读取的资源名称，不需要后缀
+      profile: dev
+      label: master #指的是分支
+      uri: http://localhost:3344

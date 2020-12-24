@@ -9,25 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springcloud-config-client-3355</artifactId>
+    <artifactId>springcloud-config-eureka-7001</artifactId>
 
     <dependencies>
-        <!--Starter Config 配合3344里的springcloud config使用-->
+        <!--Starter Config 还是配合3344springcloud config使用-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
             <version>2.1.1.RELEASE</version>
         </dependency>
-
-        <!--完善监控信息  配合hystrix_dashboard完成监控-->
+        <!-- eureka注册中心的依赖 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <version>2.1.6.RELEASE</version>
         </dependency>
-
+        <!--热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-devtools</artifactId>
         </dependency>
     </dependencies>
 
